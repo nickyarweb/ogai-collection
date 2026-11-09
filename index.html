@@ -86,10 +86,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .badge span{font-size:13px;color:var(--muted)}
 
 /* Marquee */
-.marquee{background:var(--navy);color:#fff;overflow:hidden}
-.marquee-track{display:flex;gap:44px;width:max-content;padding-block:18px;font-family:var(--font-display);font-size:22px;white-space:nowrap;animation:slide 34s linear infinite}
-.marquee-track span::after{content:"♛";color:var(--rose);margin-left:44px;font-size:16px;vertical-align:middle}
-@keyframes slide{to{transform:translateX(-50%)}}
+.marquee{background:var(--navy);color:#fff;overflow:hidden;width:100%}
+.marquee-track{display:flex;width:max-content;will-change:transform;animation:marquee var(--dur, 40s) linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-set{display:flex;flex:none;align-items:center;padding-block:clamp(14px, 2vw, 18px);font-family:var(--font-display);font-size:clamp(17px, 2.2vw, 22px);white-space:nowrap}
+.marquee-set span{display:inline-flex;align-items:center;gap:clamp(28px, 4vw, 44px);padding-right:clamp(28px, 4vw, 44px)}
+.marquee-set span::after{content:"♛";color:var(--rose);font-size:.72em}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(calc(-1 * var(--shift, 50%)))}}
 
 section{padding-block:96px}
 .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
@@ -228,7 +231,7 @@ footer .ps{color:#f3a9c0;font-size:18px}
         <span class="ps-name" lang="ps">اوږۍ</span>
         <span class="eyebrow">Afghan dresses · Embroidery · Jewelry</span>
         <h1>Afghan style, made to <em>celebrate.</em></h1>
-        <p class="lead">Beautiful Afghan dresses, embroidered vests and statement jewelry for weddings, Eid, engagements and every special day.</p>
+        <p class="lead">Beautiful Afghan dresses, embroidered vests and statement jewelry for weddings, Eid, engagements and making every day special.</p>
         <div class="actions">
           <a class="btn btn-navy" href="#collection">Shop the collection</a>
           <a class="btn btn-line" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order on Instagram</a>
@@ -251,9 +254,9 @@ footer .ps{color:#f3a9c0;font-size:18px}
   </section>
 
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span>
-      <span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span>
+    <div class="marquee-track" id="marquee-track">
+      <div class="marquee-set"><span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span></div>
+      <div class="marquee-set"><span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span></div>
     </div>
   </div>
 
@@ -383,6 +386,25 @@ footer .ps{color:#f3a9c0;font-size:18px}
 </footer>
 
 <script>
+/* Endless strip: repeat the list until it covers any screen width, then slide exactly one copy so the loop never shows a gap. */
+(function(){
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  var first = track.querySelector('.marquee-set');
+  function build(){
+    var sets = track.querySelectorAll('.marquee-set');
+    for (var i = sets.length - 1; i > 0; i--) track.removeChild(sets[i]);
+    var w = first.getBoundingClientRect().width;
+    if (!w) return;
+    var copies = Math.ceil(window.innerWidth / w) + 1;
+    for (var j = 0; j < copies; j++) { var c = first.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c); }
+    track.style.setProperty('--shift', w + 'px');
+    track.style.setProperty('--dur', Math.max(20, w / 55) + 's');
+  }
+  var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(build, 150); });
+  build();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+})();
 (function(){
   var items = document.querySelectorAll('.item');
   function show(c){
