@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OGAI Collection · Afghan Dresses &amp; Traditional Fashion</title>
+<meta name="description" content="OGAI Collection: handpicked Afghan dresses, embroidered vests, coats and jewelry. Browse the collection and order by Instagram DM.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Vazirmatn:wght@600;800&display=swap">
+<style>
+/* Layout: fashion lookbook. Soft porcelain ground, navy ink and blush crown from the OGAI logo, jewel-tone photos carry the color. */
+:root{
+  color-scheme:light;
+  --porcelain:#fbf7f4;
+  --blush:#f6e6ea;
+  --white:#ffffff;
+  --navy:#1d2340;
+  --navy-2:#2b3360;
+  --ink:#1b1d2a;
+  --muted:#5f6276;
+  --rose:#d94f7a;
+  --rose-deep:#b23a61;
+  --gold:#b9924a;
+  --line:rgba(29,35,64,.12);
+  --font-display:"Gilda Display", "Didot", Georgia, serif;
+  --font-body:"DM Sans", "Segoe UI", system-ui, sans-serif;
+  --font-ps:"Vazirmatn", Tahoma, sans-serif;
+  --wrap:1220px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--porcelain);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;margin:0;line-height:1.08;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+em{font-style:italic;color:var(--rose)}
+.ps{font-family:var(--font-ps);direction:rtl}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--rose-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 14px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;padding:17px 28px;border-radius:999px;text-decoration:none;border:1.5px solid var(--navy);cursor:pointer;transition:background .2s, color .2s, transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-rose{background:var(--rose);border-color:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-deep);border-color:var(--rose-deep)}
+.btn-line{background:transparent;color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+
+.concept{background:var(--navy);color:#d6d9ee;font-size:13px;text-align:center}
+.concept .wrap{padding-block:8px}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:rgba(251,247,244,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:30;background:var(--porcelain)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:52px;width:auto;mix-blend-mode:multiply}
+.brand .ps{font-size:22px;color:var(--rose)}
+.links{display:flex;gap:28px;align-items:center;font-size:14px;font-weight:500;letter-spacing:.04em}
+.links a{text-decoration:none}
+.links a:hover{color:var(--rose-deep)}
+.links .btn{padding:12px 20px;font-size:12px}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center;padding-block:64px 88px}
+.hero-text{display:grid;gap:22px}
+.hero .ps-name{font-family:var(--font-ps);direction:rtl;font-size:44px;font-weight:800;color:var(--rose);line-height:1;justify-self:start}
+.hero h1{font-size:clamp(46px, 6.4vw, 88px);color:var(--navy)}
+.hero .lead{font-size:19px;color:var(--muted);max-width:42ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin-top:6px;padding-top:22px;border-top:1px solid var(--line)}
+.stats b{display:block;font-family:var(--font-display);font-size:34px;color:var(--navy);font-weight:400}
+.stats span{font-size:14px;color:var(--muted)}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px;min-width:0}
+.collage img{width:100%;object-fit:cover;border-radius:18px;box-shadow:0 24px 40px -26px rgba(29,35,64,.45)}
+.collage .a{grid-row:span 2;aspect-ratio:3/4.4;height:100%}
+.collage .b,.collage .c{aspect-ratio:1/1}
+.collage-wrap{position:relative;min-width:0}
+.badge{position:absolute;left:-18px;bottom:30px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(29,35,64,.45);display:flex;gap:12px;align-items:center}
+.badge i{font-style:normal;width:40px;height:40px;border-radius:50%;background:var(--blush);display:grid;place-items:center;color:var(--rose);font-size:18px}
+.badge b{display:block;font-family:var(--font-display);font-weight:400;font-size:19px;color:var(--navy)}
+.badge span{font-size:13px;color:var(--muted)}
+
+/* Marquee */
+.marquee{background:var(--navy);color:#fff;overflow:hidden}
+.marquee-track{display:flex;gap:44px;width:max-content;padding-block:18px;font-family:var(--font-display);font-size:22px;white-space:nowrap;animation:slide 34s linear infinite}
+.marquee-track span::after{content:"♛";color:var(--rose);margin-left:44px;font-size:16px;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding-block:96px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.head > div{display:grid;gap:12px}
+.head h2{font-size:clamp(38px, 5vw, 62px);color:var(--navy)}
+.head p{color:var(--muted);max-width:44ch}
+
+/* Categories */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat{position:relative;border-radius:20px;overflow:hidden;aspect-ratio:3/4;text-decoration:none;color:#fff;border:0;padding:0;cursor:pointer;font:inherit;text-align:left}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.cat:hover img{transform:scale(1.06)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(17,20,40,.82), transparent 55%)}
+.cat div{position:absolute;left:20px;right:20px;bottom:18px;z-index:1;display:grid;gap:2px}
+.cat h3{font-size:26px}
+.cat span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#f3c7d5}
+
+/* Products */
+.shop{background:var(--white)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.filter{border:1.5px solid var(--line);background:var(--porcelain);border-radius:999px;padding:10px 18px;font:500 14px var(--font-body);cursor:pointer;color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 22px}
+.item{display:grid;gap:10px;align-content:start}
+.item .ph{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:16px;background:var(--blush)}
+.item .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.item:hover .ph img{transform:scale(1.05)}
+.item .new{position:absolute;left:10px;top:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--rose);color:#fff;padding:6px 10px;border-radius:999px}
+.item h3{font-size:20px;color:var(--navy)}
+.item p{font-size:14px;color:var(--muted)}
+.item .row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.item .price{font-size:14px;font-weight:700;color:var(--rose-deep)}
+.item a.order{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:999px;padding:8px 14px}
+.item a.order:hover{background:var(--navy);color:#fff}
+
+/* Occasions */
+.occasions .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.occ-text{display:grid;gap:22px}
+.occ-text h2{font-size:clamp(38px, 4.8vw, 58px);color:var(--navy)}
+.occ-text p{color:var(--muted);font-size:18px;max-width:48ch}
+.occ-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.occ-list div{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:grid;gap:2px}
+.occ-list b{font-family:var(--font-display);font-weight:400;font-size:21px;color:var(--navy)}
+.occ-list span{font-size:14px;color:var(--muted)}
+.occ-photo{position:relative;min-width:0}
+.occ-photo img{width:100%;aspect-ratio:4/4.6;object-fit:cover;border-radius:200px 200px 20px 20px}
+.occ-photo .crown{position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-size:24px;box-shadow:0 10px 24px -10px rgba(217,79,122,.8)}
+
+/* Feedback */
+.feedback{background:var(--blush)}
+.fb{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fb div{background:var(--white);border-radius:20px;padding:30px;display:grid;gap:12px;align-content:start}
+.fb i{font-style:normal;width:48px;height:48px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:20px}
+.fb h3{font-size:24px;color:var(--navy)}
+.fb p{color:var(--muted);font-size:15px}
+.fb-cta{display:flex;justify-content:center;margin-top:32px}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:34px 26px 0 0;display:grid;gap:10px;align-content:start}
+.step + .step{padding-left:26px;border-left:1px solid var(--line)}
+.step .n{font-family:var(--font-display);font-size:52px;line-height:1;color:var(--rose)}
+.step h3{font-size:24px;color:var(--navy)}
+.step p{color:var(--muted);font-size:15px}
+
+/* Social */
+.social{background:var(--navy);color:#fff}
+.social .head h2{color:#fff}
+.social .head p{color:#c9cde6}
+.social .eyebrow{color:#f3a9c0}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.strip a{display:block;aspect-ratio:1/1;overflow:hidden;border-radius:12px}
+.strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.strip a:hover img{transform:scale(1.07)}
+.pages{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.pages a{display:grid;gap:2px;padding:18px 20px;border:1px solid rgba(255,255,255,.18);border-radius:16px;text-decoration:none;transition:background .2s}
+.pages a:hover{background:rgba(255,255,255,.08)}
+.pages b{font-size:15px}
+.pages span{font-size:13px;color:#c9cde6}
+
+footer{background:#141831;color:#b9bdd6;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:28px}
+footer .ps{color:#f3a9c0;font-size:18px}
+
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+@media (max-width: 1000px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .cats{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:repeat(3,1fr)}
+  .pages{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 860px){
+  section{padding-block:72px}
+  .links a:not(.btn){display:none}
+  .hero .wrap,.occasions .wrap{grid-template-columns:1fr;gap:48px}
+  .collage-wrap{max-width:560px}
+  .badge{left:10px}
+  .grid{grid-template-columns:1fr 1fr}
+  .fb{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step,.step + .step{padding:26px 18px 26px 0;border-left:0}
+  .step:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+  .step:nth-child(n+3){border-top:1px solid var(--line)}
+  .occ-photo{max-width:440px}
+}
+@media (max-width: 520px){
+  .steps,.occ-list,.pages{grid-template-columns:1fr}
+  .step:nth-child(even){padding-left:0;border-left:0}
+  .step + .step{border-top:1px solid var(--line)}
+  .grid{gap:20px 14px}
+  .item h3{font-size:17px}
+  .item .row{flex-wrap:wrap}
+  .brand .ps{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo.jpg" alt="OGAI Collection logo"><span class="ps" lang="ps">اوږۍ</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#collection">Collection</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#order">How to order</a>
+      <a class="btn btn-rose" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-block:0">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="ps-name" lang="ps">اوږۍ</span>
+        <span class="eyebrow">Afghan dresses · Embroidery · Jewelry</span>
+        <h1>Afghan style, made to <em>celebrate.</em></h1>
+        <p class="lead">Beautiful Afghan dresses, embroidered vests and statement jewelry for weddings, Eid, engagements and every special day.</p>
+        <div class="actions">
+          <a class="btn btn-navy" href="#collection">Shop the collection</a>
+          <a class="btn btn-line" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order on Instagram</a>
+        </div>
+        <div class="stats">
+          <div><b>33K+</b><span>Followers</span></div>
+          <div><b>900+</b><span>Styles shared</span></div>
+          <div><b>♛</b><span>Loved by our community</span></div>
+        </div>
+      </div>
+      <div class="collage-wrap">
+        <div class="collage">
+          <img class="a" src="images/p1.jpg" alt="Black Afghan dress with colorful embroidered bodice">
+          <img class="b" src="images/p2.jpg" alt="Red satin Afghan dress with silver embroidery">
+          <img class="c" src="images/p7.jpg" alt="Royal blue Afghan dress with embroidered details">
+        </div>
+        <div class="badge"><i aria-hidden="true">♛</i><div><b>New arrivals</b><span>New styles added often</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span>
+      <span>Afghan dresses</span><span>Velvet &amp; embroidery</span><span>Wedding styles</span><span>Eid collection</span><span>Embroidered vests</span><span>Afghan jewelry</span>
+    </div>
+  </div>
+
+  <section id="categories">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Shop by category</span><h2>Find your <em>look</em></h2></div>
+        <p>From colorful party dresses to rich velvet and gold embroidery.</p>
+      </div>
+      <div class="cats">
+        <button class="cat" type="button" data-go="dress"><img src="images/p12.jpg" alt="" loading="lazy"><div><span>Collection</span><h3>Afghan dresses</h3></div></button>
+        <button class="cat" type="button" data-go="velvet"><img src="images/p4.jpg" alt="" loading="lazy"><div><span>Collection</span><h3>Velvet &amp; embroidery</h3></div></button>
+        <button class="cat" type="button" data-go="vest"><img src="images/p5.jpg" alt="" loading="lazy"><div><span>Collection</span><h3>Vests &amp; coats</h3></div></button>
+        <button class="cat" type="button" data-go="jewelry"><img src="images/p11.jpg" alt="" loading="lazy"><div><span>Collection</span><h3>Jewelry</h3></div></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="collection">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">New arrivals</span><h2>The <em>collection</em></h2></div>
+        <p>Every style is limited. Tap “Order” to message us about size, color and price.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter collection">
+        <button class="filter" type="button" data-cat="all" aria-pressed="true">All</button>
+        <button class="filter" type="button" data-cat="dress" aria-pressed="false">Afghan dresses</button>
+        <button class="filter" type="button" data-cat="velvet" aria-pressed="false">Velvet &amp; embroidery</button>
+        <button class="filter" type="button" data-cat="vest" aria-pressed="false">Vests &amp; coats</button>
+        <button class="filter" type="button" data-cat="jewelry" aria-pressed="false">Jewelry</button>
+      </div>
+      <div class="grid" id="grid">
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p1.jpg" alt="Black Afghan dress with colorful embroidered bodice" loading="lazy"><span class="new">New</span></div><h3>Black Afghan Dress</h3><p>Flowing black skirt with a colorful embroidered top.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p2.jpg" alt="Red satin Afghan dress with silver embroidery" loading="lazy"><span class="new">New</span></div><h3>Red Satin Afghan Dress</h3><p>Rich red satin with silver embroidered neckline.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p3.jpg" alt="Golden Afghan dress with colorful embroidery" loading="lazy"></div><h3>Golden Afghan Dress</h3><p>Shimmering gold fabric with bright traditional embroidery.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="velvet dress"><div class="ph"><img src="images/p4.jpg" alt="Plum velvet Afghan dress with silver embroidery" loading="lazy"></div><h3>Plum Velvet Dress</h3><p>Deep plum velvet with white embroidered details.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="vest"><div class="ph"><img src="images/p5.jpg" alt="Black vests with gold embroidery" loading="lazy"></div><h3>Gold Embroidered Vests</h3><p>Black vests with rich gold embroidery, matching styles.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="vest velvet"><div class="ph"><img src="images/p6.jpg" alt="Navy coat with gold embroidery" loading="lazy"></div><h3>Embroidered Long Coat</h3><p>Dark coat with gold embroidery on the front and sleeves.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p7.jpg" alt="Royal blue Afghan dress with embroidered details" loading="lazy"><span class="new">New</span></div><h3>Royal Blue Afghan Dress</h3><p>Bright blue with silver and colorful embroidery.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p8.jpg" alt="Pink satin Afghan dress with coin details" loading="lazy"></div><h3>Pink Satin Afghan Dress</h3><p>Soft pink satin with a decorated neckline.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p9.jpg" alt="Black pleated Afghan dress with red embroidery" loading="lazy"></div><h3>Black &amp; Red Afghan Dress</h3><p>Pleated black dress with red embroidered bodice.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="velvet dress"><div class="ph"><img src="images/p10.jpg" alt="Maroon velvet Afghan dress with gold embroidery" loading="lazy"></div><h3>Maroon Velvet Dress</h3><p>Maroon velvet with gold embroidery and coin trim.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="jewelry"><div class="ph"><img src="images/p11.jpg" alt="Afghan pendant necklace with colorful stones and chains" loading="lazy"></div><h3>Afghan Pendant Necklace</h3><p>Statement pendant with colorful stones and dangling chains.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+        <article class="item" data-cat="dress"><div class="ph"><img src="images/p12.jpg" alt="Purple Afghan dress with colorful embroidered bodice" loading="lazy"><span class="new">New</span></div><h3>Purple Afghan Dress</h3><p>Vivid purple with a bright embroidered top.</p><div class="row"><span class="price">DM for price</span><a class="order" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Order</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="occasions" id="occasions">
+    <div class="wrap">
+      <div class="occ-text">
+        <span class="eyebrow">For every occasion</span>
+        <h2>Dress for the moments that <em>matter.</em></h2>
+        <p>Whether it’s a wedding, an engagement, Eid or a family gathering, find a look that honors tradition and makes you shine.</p>
+        <div class="occ-list">
+          <div><b>Weddings</b><span>Statement dresses and jewelry</span></div>
+          <div><b>Eid</b><span>Bright colors for celebration</span></div>
+          <div><b>Engagements</b><span>Velvet and gold embroidery</span></div>
+          <div><b>Family events</b><span>Elegant, comfortable styles</span></div>
+        </div>
+        <div class="actions"><a class="btn btn-rose" href="https://ig.me/m/ogai_collection" target="_blank" rel="noopener">Ask us for a style</a></div>
+      </div>
+      <div class="occ-photo">
+        <img src="images/p10.jpg" alt="Maroon velvet Afghan dress with gold embroidery" loading="lazy">
+        <span class="crown" aria-hidden="true">♛</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="feedback" id="feedback">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">Our community</span><h2>Why customers <em>love</em> OGAI</h2></div>
+        <p>See real customer photos and messages in our Instagram “Feedback” highlight.</p>
+      </div>
+      <div class="fb">
+        <div><i aria-hidden="true">♛</i><h3>Handpicked styles</h3><p>Every dress, vest and piece of jewelry is chosen for quality and beauty.</p></div>
+        <div><i aria-hidden="true">✦</i><h3>Always something new</h3><p>New arrivals are shared often, so there’s always a fresh look to discover.</p></div>
+        <div><i aria-hidden="true">✉</i><h3>Personal service</h3><p>Message us anytime for sizes, colors and help choosing the perfect outfit.</p></div>
+      </div>
+      <div class="fb-cta"><a class="btn btn-navy" href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener">See customer feedback</a></div>
+    </div>
+  </section>
+
+  <section id="order">
+    <div class="wrap">
+      <div class="head"><div><span class="eyebrow">How to order</span><h2>Order in <em>4 easy steps</em></h2></div></div>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><h3>Choose</h3><p>Find the dress or piece you love on this page or on Instagram.</p></div>
+        <div class="step"><span class="n">2</span><h3>Message us</h3><p>Send a screenshot to our Instagram DM.</p></div>
+        <div class="step"><span class="n">3</span><h3>Confirm</h3><p>We confirm size, color, price and delivery with you.</p></div>
+        <div class="step"><span class="n">4</span><h3>Celebrate</h3><p>Your outfit arrives, ready for your special day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social">
+    <div class="wrap">
+      <div class="head">
+        <div><span class="eyebrow">@ogai_collection</span><h2>Join <em style="color:#f3a9c0">33K+</em> followers</h2></div>
+        <p>Follow us for new arrivals, styling ideas and restocks.</p>
+      </div>
+      <div class="strip">
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p3.jpg" alt="Golden Afghan dress" loading="lazy"></a>
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p9.jpg" alt="Black and red Afghan dress" loading="lazy"></a>
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p6.jpg" alt="Embroidered coat" loading="lazy"></a>
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p8.jpg" alt="Pink satin dress" loading="lazy"></a>
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p4.jpg" alt="Plum velvet dress" loading="lazy"></a>
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><img src="images/p2.jpg" alt="Red satin dress" loading="lazy"></a>
+      </div>
+      <div class="pages">
+        <a href="https://www.instagram.com/ogai_collection/" target="_blank" rel="noopener"><b>Instagram</b><span>@ogai_collection</span></a>
+        <a href="https://www.tiktok.com/@ogai_collection" target="_blank" rel="noopener"><b>TikTok</b><span>@ogai_collection</span></a>
+        <a href="https://www.threads.com/@ogai_collection" target="_blank" rel="noopener"><b>Threads</b><span>@ogai_collection</span></a>
+        <a href="https://www.instagram.com/__vip_style__1/" target="_blank" rel="noopener"><b>Second page</b><span>@__vip_style__1</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span><span class="ps" lang="ps">اوږۍ</span> · OGAI Collection</span>
+    <span>Afghan dresses, embroidery &amp; jewelry</span>
+    <span>Website by <a href="https://nickyarweb.github.io/" target="_blank" rel="noopener" style="color:#f3a9c0">Nickyar Web Design</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.item');
+  function show(c){
+    document.querySelectorAll('.filter').forEach(function(x){ x.setAttribute('aria-pressed', x.dataset.cat === c ? 'true' : 'false'); });
+    items.forEach(function(it){ it.hidden = c !== 'all' && it.dataset.cat.split(' ').indexOf(c) === -1; });
+  }
+  document.querySelectorAll('.filter').forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.cat); }); });
+  document.querySelectorAll('.cat').forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.go); document.getElementById('collection').scrollIntoView(); }); });
+})();
+</script>
+</body>
+</html>
